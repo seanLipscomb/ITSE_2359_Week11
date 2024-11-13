@@ -1,27 +1,28 @@
+#include <iostream>
 #include "OrderedCircularLinkedList.h"
 #include "OrderedDoublyLinkedList.h"
-#include <iostream>
- 
+
 int main() {
     OrderedCircularLinkedList circularList;
     OrderedDoublyLinkedList doublyList;
- 
-    int testData[] = {30, 25, 35, 20, 40};
- 
-    // Test Ordered Circular Linked List
-    cout << "Ordered Circular Linked List:" << endl;
-    for (int value : testData) {
-        circularList.insertOrdered(value);
+
+    int data[] = {30, 25, 35, 20, 40};
+    
+    std::cout << "Inserting into Circular Linked List:" << std::endl;
+    for (int i : data) {
+        circularList.insertOrdered(i);
     }
+    std::cout << "Circular Linked List (Ascending Order): ";
     circularList.printList();
- 
-    // Test Ordered Doubly Linked List
-    cout << "\nOrdered Doubly Linked List:" << endl;
-    for (int value : testData) {
-        doublyList.insertOrdered(value);
+
+    std::cout << "\nInserting into Doubly Linked List:" << std::endl;
+    for (int i : data) {
+        doublyList.insertOrdered(i);
     }
+    std::cout << "Doubly Linked List (Forward Order): ";
     doublyList.printForward();
+    std::cout << "Doubly Linked List (Backward Order): ";
     doublyList.printBackward();
- 
+
     return 0;
 }

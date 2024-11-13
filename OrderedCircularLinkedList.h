@@ -1,27 +1,27 @@
 #ifndef ORDEREDCIRCULARLINKEDLIST_H
 #define ORDEREDCIRCULARLINKEDLIST_H
- 
+
 #include <iostream>
-using namespace std;
- 
+
+// node structure for Ordered Circular Linked List
 struct Node {
     int data;
     Node* next;
-    Node(int value);
+    
+    Node(int value) : data(value), next(nullptr) {}
 };
- 
+// class to define head
 class OrderedCircularLinkedList {
 private:
     Node* head;
- 
+
 public:
     OrderedCircularLinkedList();
- 
-    // Insert function to maintain ascending order
+    ~OrderedCircularLinkedList();
+    
     void insertOrdered(int newData);
- 
-    // Print function to display the circular list
-    void printList();
+    void printList() const;
+    bool isEmpty() const;
 };
- 
+
 #endif
